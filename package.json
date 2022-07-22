@@ -1,7 +1,7 @@
 {
-  "name": "userscript-gulp-template",
+  "name": "pretending-tab-video-viewer",
   "version": "0.0.1",
-  "description": "User script template that acts as module and tries to simulate imports",
+  "description": "User Script that opens videos in tab like view",
   "author": "FlowerForWar",
   "main": "src/index.js",
   "scripts": {

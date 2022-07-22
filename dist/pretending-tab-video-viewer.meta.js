@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name           userscript-gulp-template
+// @name           pretending-tab-video-viewer
 // @version        0.0.1
 // @namespace      https://github.com/FlowerForWar
-// @description    User script template that acts as module and tries to simulate imports
+// @description    User Script that opens videos in tab like view
 // @author         FlowerForWar
 // @match          *://*/*
 // @grant          GM_getValue
@@ -19,10 +19,10 @@
 // @compatible     firefox Greasemonkey, Tampermonkey or Violentmonkey
 // @compatible     chrome Tampermonkey or Violentmonkey
 // @compatible     opera Tampermonkey or Violentmonkey
-// @supportURL     https://github.com/FlowerForWar/userscript-gulp-template/issues
-// @homepageURL    https://github.com/FlowerForWar/userscript-gulp-template
-// @updateURL      https://github.com/FlowerForWar/userscript-gulp-template/raw/main/dist/userscript-gulp-template.meta.js
-// @downloadURL    https://github.com/FlowerForWar/userscript-gulp-template/raw/main/dist/userscript-gulp-template.user.js
-// @icon           https://github.com/FlowerForWar/userscript-gulp-template/blob/main/src/icons/user.png?raw=true
+// @supportURL     https://github.com/FlowerForWar/pretending-tab-video-viewer/issues
+// @homepageURL    https://github.com/FlowerForWar/pretending-tab-video-viewer
+// @updateURL      https://github.com/FlowerForWar/pretending-tab-video-viewer/raw/main/dist/pretending-tab-video-viewer.meta.js
+// @downloadURL    https://github.com/FlowerForWar/pretending-tab-video-viewer/raw/main/dist/pretending-tab-video-viewer.user.js
+// @icon           https://github.com/FlowerForWar/pretending-tab-video-viewer/blob/main/src/icons/user.png?raw=true
 // @license        MIT
 // ==/UserScript==
