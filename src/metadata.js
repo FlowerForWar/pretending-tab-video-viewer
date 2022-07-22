@@ -27,7 +27,7 @@ const metadata = {
     'GM_xmlhttpRequest',
     'GM_setClipboard',
   ],
-  'run-at': 'document-start',
+  'run-at': 'document-end',
   noframes: '',
   compatible: [
     //

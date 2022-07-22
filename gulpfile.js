@@ -6,11 +6,12 @@
 
 require('paint-console');
 const { src, dest, watch, series } = require('gulp');
+const prettier = require('prettier');
 
 const sass = require('gulp-sass')(require('sass'));
 const postcss = require('gulp-postcss');
 const cssnano = require('cssnano');
-const htmlmin = require('gulp-htmlmin');
+const htmlmin = require('gulp-html-minifier-terser');
 
 const newFile = require('gulp-file');
 const rename = require('gulp-rename');
@@ -26,6 +27,7 @@ const del = require('del');
 const path = require('path');
 
 const buildConfig = require('./build.config.js');
+const prettierConfig = require('./prettier.config.js');
 const { importModules } = require('./lib/importModules.js');
 const { metadata, metadataDev } = require('./src/metadata.js');
 
@@ -106,7 +108,7 @@ function htmlTask() {
   return (
     src(paths.html)
       // .pipe(flatten())
-      .pipe(htmlmin({ collapseWhitespace: !0 }))
+      .pipe(htmlmin({ collapseWhitespace: !0, removeComments: !0 }))
       .pipe(dest('dist'))
   );
 }
@@ -129,7 +131,9 @@ function jsTask() {
 
       /** `Cleaning up` replacements */
       .pipe(buildConfig.importSupport ? replace(/export default \w+;/g, '') : noop())
-      .pipe(replace(/\n{2,}/g, '\n\n'))
+      // .pipe(modifyContent((content) => !console.log(content) && content))
+      // .pipe(replace(/\n{2,}/g, '\n\n'))
+      // .pipe(replace(/(\r?\n){2,}/g, '\n\n'))
 
       /** Inserting the source URL if one of these options is enabled, `cssSupport`,
        * `htmlMinify` or `importSupport`.
@@ -144,6 +148,9 @@ function jsTask() {
 
       /** Inserting the user script metadata block */
       .pipe(prependFile(`dist/${metadata.name}.meta.js`))
+
+      /** Applying `prettier.format` on the final code */
+      .pipe(modifyContent((content) => prettier.format(content, prettierConfig)))
 
       .pipe(rename(`${metadata.name}.user.js`))
       .pipe(dest('dist'))
@@ -177,7 +184,7 @@ const defaultTasks = [
   buildConfig.cssSupport && cssTask,
   buildConfig.htmlMinify && htmlTask,
   jsTask,
-  watchTask,
+  // watchTask,
 ].filter(Boolean);
 
 // console.log(defaultTasks);

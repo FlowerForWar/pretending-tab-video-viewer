@@ -1,3 +1,8 @@
-//
+/* eslint-disable no-unused-vars */
+import addStyle from './js/addStyle.js';
 
-console.log('pretending-tab-video-viewer');
+addStyle(
+  `
+include: main.css
+`
+);

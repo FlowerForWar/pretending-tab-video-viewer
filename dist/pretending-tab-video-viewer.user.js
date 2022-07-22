@@ -13,7 +13,7 @@
 // @grant          GM.setValue
 // @grant          GM.xmlhttpRequest
 // @grant          GM.setClipboard
-// @run-at         document-start
+// @run-at         document-end
 // @noframes
 // @compatible     edge Tampermonkey or Violentmonkey
 // @compatible     firefox Greasemonkey, Tampermonkey or Violentmonkey
@@ -31,6 +31,31 @@
  * Source files are available at https://github.com/FlowerForWar/pretending-tab-video-viewer/tree/main/src
  */
 
-//
+/* eslint-disable no-unused-vars */
+function addStyle(styleText, id) {
+  const head = document.getElementsByTagName('head')[0] || document.documentElement;
+  const style = document.createElement('style');
+  style.setAttribute('type', 'text/css');
+  style.textContent = styleText;
+  if (id) {
+    style.setAttribute('id', id);
+  }
+  head.appendChild(style);
+  return style;
+}
 
-console.log('pretending-tab-video-viewer');
+addStyle(
+  `
+div#pretending-tab-video-viewer {
+  position: fixed;
+  background-color: #1f1f1f;
+  z-index: 30000;
+  inset: 0;
+}
+
+div#pretending-tab-video-viewer > video {
+  width: 100%;
+  height: 100%;
+}
+`
+);

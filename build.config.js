@@ -10,7 +10,7 @@ module.exports = {
    * These compiled `css` files will be saved at `./dist` folder, and can be included in any
    * of the `js` files later, by their original names, but with `css` extensions.
    */
-  cssSupport: !1,
+  cssSupport: !0,
 
   /**
    * If enabled, the already compiled `css` files located at `./dist`, will have minified versions
@@ -25,7 +25,7 @@ module.exports = {
    * These minified `html` files will be saved at `./dist` folder, and can be included in any
    * of the `js` files later, by their original names.
    */
-  htmlMinify: !1,
+  htmlMinify: !0,
 
   /**
    * If enabled, it will allow the `index.js` file to use import, to import other modules,

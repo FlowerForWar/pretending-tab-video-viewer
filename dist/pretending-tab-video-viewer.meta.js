@@ -13,7 +13,7 @@
 // @grant          GM.setValue
 // @grant          GM.xmlhttpRequest
 // @grant          GM.setClipboard
-// @run-at         document-start
+// @run-at         document-end
 // @noframes
 // @compatible     edge Tampermonkey or Violentmonkey
 // @compatible     firefox Greasemonkey, Tampermonkey or Violentmonkey
