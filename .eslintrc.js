@@ -16,6 +16,7 @@ module.exports = {
   },
   globals: {
     GM_xmlhttpRequest: 'readonly',
+    xhr: 'writable',
   },
   rules: {
     'no-console': 'off',

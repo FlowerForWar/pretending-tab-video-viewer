@@ -18,7 +18,7 @@ module.exports = {
    * plus `.min`, and with `css` extensions.
    * This option is ignored when `cssSupport` is disabled.
    */
-  cssMinify: !1,
+  cssMinify: !0,
 
   /**
    * If enabled, `html` files located at `./src/html` folder, will be minified.
