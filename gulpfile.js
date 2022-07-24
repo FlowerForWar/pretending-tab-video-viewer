@@ -130,7 +130,9 @@ function jsTask() {
       )
 
       /** `Cleaning up` replacements */
-      .pipe(buildConfig.importSupport ? replace(/export default \w+;/g, '') : noop())
+      .pipe(
+        buildConfig.importSupport ? replace(/export ((default \w+)|(\{[ ,\w]+\}));/g, '') : noop()
+      )
       // .pipe(modifyContent((content) => !console.log(content) && content))
       // .pipe(replace(/\n{2,}/g, '\n\n'))
       // .pipe(replace(/(\r?\n){2,}/g, '\n\n'))
